@@ -27,6 +27,13 @@ function getPlayerPUUID(playerName){
             console.error(error);
         });
 }
+app.get("/:summonerName", async (req, res) => {
+    const playerData = await axios.get(`https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${req.params.summonerName}?api_key=${API_KEY}`)
+        .then( response => { return response.data} )
+        .catch(error => { return error });
+    res.json(playerData);
+});
+
 
 app.get("/champmastery/:summonerId/:championId", async (req, res) => {
     const API_CALL = `https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${req.params.summonerId}/by-champion/${req.params.championId}?api_key=${API_KEY}`;
