@@ -10,6 +10,7 @@ function App() {
   const [userName, setUserName] = useState("");
   const [searchText, setSearchText] = useState("");
   const [gameList, setGameList] = useState([]);
+  const [summonerData, setSummonerData] = useState({});
 
 
   function handleChange(event){
@@ -25,7 +26,12 @@ function App() {
       .catch(error => { 
         console.error(error) 
       });
-  }
+      axios.get(`https://league-matches-history.herokuapp.com/${searchText}`)
+      .then(response => {
+        setSummonerData(response.data);
+      })
+      .catch(error => { return error; });      
+}
   function lookPlayerUp(summonerName){
     axios.get(`https://league-matches-history.herokuapp.com/past5games/${summonerName}`)
       .then(response => {
@@ -36,6 +42,11 @@ function App() {
       .catch(error => { 
         console.error(error) 
       });
+      axios.get(`https://league-matches-history.herokuapp.com/${summonerName}`)
+        .then(response => {
+          setSummonerData(response.data);
+        })
+        .catch(error => { return error; });
   }
 
    console.log(gameList); 
@@ -57,6 +68,11 @@ function App() {
       {gameList.length ? 
         <>
         <h1 className = "summoner-header">Summoner: <strong>{userName}'s</strong> Match History</h1>
+        <div className = "player-profile">
+        <p><strong>Summoner Name: </strong>{summonerData.name}</p>
+        <p><strong>Summoner Level: </strong>{summonerData.summonerLevel}</p>
+        <img width = "200" height = "200" src ={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/profileicon/${summonerData.profileIconId}.png`} alt = "profile-img"></img>
+        </div>
         {gameList.map((gameData, index) => {
           return <div>
           <h2 class = "game-heading">  Game {index + 1} </h2>
