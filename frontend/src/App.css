@@ -1,0 +1,96 @@
+body{
+  background-color: #8e7b78 !important;
+}
+footer{
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; 
+  border-top: 2px solid #001A6C;
+  background-color: goldenrod;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Player{
+  height: 500px;
+  width: 500px;
+  border: 20px solid #5F4B8BFF;
+  margin: auto;
+  padding: 10px;
+}
+.Player-Blue{
+  background-color: #5F9EA0;
+}
+.Player-Red{
+  background-color: #E69A8DFF;
+}
+
+.player-container{
+  columns: 2 auto;
+  margin-bottom: 5rem;
+  border: 10px solid #FDB927;
+
+}
+.input-group{
+  padding: 10px 380px;
+}
+.intro-header{
+  width: 600px;
+  border: 20px solid #1A1825;
+  color: #001A6C;
+  margin: auto;
+  padding: 10px;
+}
+.summoner-header{
+  width: 500px;
+  border: 10px solid #282c34;
+  color: #001A6C;
+  margin: auto;
+}
+.league-img{
+  background-image: url("../public/images/challenger.png");
+  width: 600px;
+  height: 400px;
+  margin: auto;
+}
+.game-heading{
+  margin: 70px 0 50px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
