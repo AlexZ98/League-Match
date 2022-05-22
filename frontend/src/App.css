@@ -77,6 +77,7 @@ footer{
   border: 10px solid #282c34;
   color: #001A6C;
   margin: auto;
+  margin-bottom: 50px;
 }
 .league-img{
   background-image: url("../public/images/challenger.png");
@@ -87,6 +88,13 @@ footer{
 .game-heading{
   margin: 70px 0 50px;
 }
+.player-profile{
+  width: 400px;
+  border: 10px solid #282c34;
+  color: #001A6C;
+  margin: auto;
+}
+
 
 @keyframes App-logo-spin {
   from {
