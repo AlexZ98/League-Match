@@ -60,7 +60,9 @@ footer{
 
 }
 .input-group{
-  padding: 10px 380px;
+  width: 50%;
+  margin: auto;
+  padding-top: 20px;
 }
 .intro-header{
   width: 600px;
