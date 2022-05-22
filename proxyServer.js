@@ -3,6 +3,19 @@ const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
 
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+console.log(path.join(__dirname, '/frontend/build'));
+console.log(path.join(__dirname, '/frontend/build/index.html'));
+
+
+
+app.use(express.static(path.join(__dirname, 'frontend', 'build')));
+
+
+
 var app = express();
 
 app.use(cors());

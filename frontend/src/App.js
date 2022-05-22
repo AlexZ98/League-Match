@@ -3,7 +3,7 @@ import './App.css';
 import React, {useState} from "react";
 import axios from 'axios';
 import Player from "./components/player";
-import Footer from "./components/footer"
+import Footer from "./components/footer";
 
 
 function App() {
