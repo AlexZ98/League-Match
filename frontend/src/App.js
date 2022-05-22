@@ -17,7 +17,7 @@ function App() {
     setSearchText(value);
   }
   function getPlayerGames(){
-    axios.get(`http://localhost:5000/past5games/${searchText}`)
+    axios.get(`https://league-matches-history.herokuapp.com/past5games/${searchText}`)
       .then(response => {
         setGameList(response.data);
         setUserName(searchText);
@@ -27,7 +27,7 @@ function App() {
       });
   }
   function lookPlayerUp(summonerName){
-    axios.get(`http://localhost:5000/past5games/${summonerName}`)
+    axios.get(`https://league-matches-history.herokuapp.com/past5games/${summonerName}`)
       .then(response => {
         setGameList(response.data);
         setSearchText(summonerName);
