@@ -9,7 +9,7 @@ function Player(props){
     
 
     function getChampMastery(){
-        axios.get(`http://localhost:5000/champmastery/${summonerId}/${championId}`)
+        axios.get(`https://league-matches-history.herokuapp.com/champmastery/${summonerId}/${championId}`)
             .then(response => { setChampMasteryInfo(response.data) })
             .catch( error => { return error });
     }
