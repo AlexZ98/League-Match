@@ -75,7 +75,7 @@ function App() {
         </div>
         {gameList.map((gameData, index) => {
           return <div>
-          <h2 class = "game-heading">  Game {index + 1}, Duration: {Math.floor(gameData.info.gameDuration/ 60) + ":" + (gameData.info.gameDuration % 60 ? gameData.info.gameDuration % 60 : '00')
+          <h2 class = "game-heading">  Game {index + 1}, Duration: {(gameData.info.gameDuration-(gameData.info.gameDuration%=60))/60+(9<gameData.info.gameDuration?':':':0')+gameData.info.gameDuration
           } Minutes </h2>
           <div className="player-container">
               {gameData.info.participants.map((data, participantIndex) => {
