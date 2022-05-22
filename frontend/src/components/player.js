@@ -17,7 +17,7 @@ function Player(props){
     useEffect( () => {
         getChampMastery()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [props]);
+    }, []);
 
 
     // const API_CALL = `https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${summonerId}/by-champion/${championId}?api_key=${process.env.REACT_APP_RIOT_API_KEY}`;
