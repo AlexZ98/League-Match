@@ -2,18 +2,14 @@ require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
-const path = require("path");
-
-const __fileName = fileURLToPath(import.meta.url);
-const __dirname = dirname(__fileName);
-
-console.log(path.join(__dirname, '/frontend/build'));
-console.log(path.join(__dirname, '/frontend/build/index.html'));
+const path = require('path');
 
 
+app.use(express.static(path.join(__dirname, 'frontend','build')));
 
-app.use(express.static(path.join(__dirname, 'frontend', 'build')));
-
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
+});
 
 
 var app = express();
