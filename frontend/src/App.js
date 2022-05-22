@@ -75,7 +75,8 @@ function App() {
         </div>
         {gameList.map((gameData, index) => {
           return <div>
-          <h2 class = "game-heading">  Game {index + 1} </h2>
+          <h2 class = "game-heading">  Game {index + 1}, Duration: {Math.floor(gameData.info.gameDuration/ 60) + ":" + (gameData.info.gameDuration % 60 ? gameData.info.gameDuration % 60 : '00')
+          } Minutes </h2>
           <div className="player-container">
               {gameData.info.participants.map((data, participantIndex) => {
                 // eslint-disable-next-line no-lone-blocks
