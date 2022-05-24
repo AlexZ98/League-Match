@@ -42,23 +42,25 @@ footer{
 
 .Player{
   height: 500px;
-  width: 500px;
+  width: 550px;
   border: 20px solid #5F4B8BFF;
-  margin: auto;
-  padding: 10px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .Player-Blue{
   background-color: #5F9EA0;
+
 }
 .Player-Red{
   background-color: #E69A8DFF;
 }
 
 .player-container{
-  columns: 2 auto;
-  margin-bottom: 5rem;
-  border: 10px solid #FDB927;
-
+  column-count: 2;
+  border-top: 20px solid gold;
+  border-bottom: 20px solid gold;
 }
 .input-group{
   width: 50%;
@@ -86,7 +88,12 @@ footer{
   margin: auto;
 }
 .game-heading{
-  margin: 70px 0 50px;
+  margin: 50px auto;
+  height: 3.5rem;
+  width: 25%;
+  border: 3px solid black;
+  background-color: aquamarine;
+  color: #1A1825;
 }
 .player-profile{
   width: 400px;
@@ -94,7 +101,6 @@ footer{
   color: #001A6C;
   margin: auto;
 }
-
 
 @keyframes App-logo-spin {
   from {
