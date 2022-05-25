@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 
 function Player(props){
     const [champMasteryInfo, setChampMasteryInfo] = useState({});
-    const { props: {kills, deaths, assists, summonerName, championName, lane, championId, summonerId, teamId }} = props;
+    const { props: {kills, deaths, assists, summonerName, championName, lane, championId, summonerId, teamId, item0, item1, item2, item3, item4, item5 }} = props;
     
 
     function getChampMastery(){
@@ -45,6 +45,15 @@ return (<div className = {`${teamId === 100 ? "Player Player-Blue" : "Player Pla
             <h3>Mastery Level: {champMasteryInfo.championLevel || "N/A"} </h3>
             <h3>Champion Mastery Points: {champMasteryInfo.championPoints || "N/A"}</h3>
             <img src = {`http://ddragon.leagueoflegends.com/cdn/12.9.1/img/champion/${championName}.png`} alt = "Champion-Splash-Img"></img>
+            <div class="row">
+                <p><strong> Items Built: </strong></p>
+                <div class="col-2"><img className = "item-img" src = {`https://ddragon.leagueoflegends.com/cdn/12.10.1/img/item/${item0}.png`} alt = "item-img"></img></div>
+                <div class="col-2"><img className = "item-img" src = {`https://ddragon.leagueoflegends.com/cdn/12.10.1/img/item/${item1}.png`} alt = "item-img"></img></div>
+                <div class="col-2"><img className = "item-img" src = {`https://ddragon.leagueoflegends.com/cdn/12.10.1/img/item/${item2}.png`} alt = "item-img"></img></div>
+                <div class="col-2"><img className = "item-img" src = {`https://ddragon.leagueoflegends.com/cdn/12.10.1/img/item/${item3}.png`} alt = "item-img"></img></div>
+                <div class="col-2"><img className = "item-img" src = {`https://ddragon.leagueoflegends.com/cdn/12.10.1/img/item/${item4}.png`} alt = "item-img"></img></div>
+                <div class="col-2"><img className = "item-img" src = {`https://ddragon.leagueoflegends.com/cdn/12.10.1/img/item/${item5}.png`} alt = "item-img"></img></div>
+            </div>
             <h3>Lane: {lane}</h3>
             <button className = "btn btn-primary" onClick = {handleClick}> Look Up Player: {summonerName} </button>
         </div>);
