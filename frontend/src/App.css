@@ -2,7 +2,7 @@ body{
   background-color: #8e7b78 !important;
 }
 footer{
-  margin-top: 100px;
+  margin-top: 6.25rem;
   position: sticky;
   bottom: 0;
   width: 100%;
@@ -41,8 +41,8 @@ footer{
 }
 
 .Player{
-  height: 500px;
-  width: 550px;
+  height: 36.5rem;
+  width: 37.5rem;
   border: 20px solid #5F4B8BFF;
   margin-bottom: 30px;
   margin-left: auto;
@@ -68,14 +68,14 @@ footer{
   padding-top: 20px;
 }
 .intro-header{
-  width: 600px;
+  width: 37.5rem;
   border: 20px solid #1A1825;
   color: #001A6C;
   margin: auto;
   padding: 10px;
 }
 .summoner-header{
-  width: 500px;
+  width: 31.25rem;
   border: 10px solid #282c34;
   color: #001A6C;
   margin: auto;
@@ -83,8 +83,8 @@ footer{
 }
 .league-img{
   background-image: url("../public/images/challenger.png");
-  width: 600px;
-  height: 400px;
+  width: 37.5rem;
+  height: 25rem;
   margin: auto;
 }
 .game-heading{
@@ -96,10 +96,14 @@ footer{
   color: #1A1825;
 }
 .player-profile{
-  width: 400px;
+  width: 25rem;
   border: 10px solid #282c34;
   color: #001A6C;
   margin: auto;
+}
+.item-img{
+  border-radius: 30%;
+  width: 90%;
 }
 
 @keyframes App-logo-spin {
