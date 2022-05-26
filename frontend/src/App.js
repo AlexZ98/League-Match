@@ -1,16 +1,24 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import Player from "./components/player";
 import Footer from "./components/footer";
-
+import ClipLoader, {override} from "react-spinners/ClipLoader";
 
 function App() {
   const [userName, setUserName] = useState("");
   const [searchText, setSearchText] = useState("");
   const [gameList, setGameList] = useState([]);
   const [summonerData, setSummonerData] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000);
+  }, []);
 
 
   function handleChange(event){
@@ -18,7 +26,7 @@ function App() {
     setSearchText(value);
   }
   function getPlayerGames(){
-    axios.get(`https://league-matches-history.herokuapp.com/past5games/${searchText}`)
+    axios.get(`https://league-matches-history.herokuapp.com/${searchText}`)
       .then(response => {
         setGameList(response.data);
         setUserName(searchText);
@@ -27,32 +35,40 @@ function App() {
         console.error(error) 
       });
       axios.get(`https://league-matches-history.herokuapp.com/${searchText}`)
-      .then(response => {
+      .then(response => { 
         setSummonerData(response.data);
       })
-      .catch(error => { return error; });      
-}
+      .catch(error => { 
+        return error;
+      });
+  }
   function lookPlayerUp(summonerName){
-    axios.get(`https://league-matches-history.herokuapp.com/past5games/${summonerName}`)
+    axios.get(`https://league-matches-history.herokuapp.com/${summonerName}`)
       .then(response => {
         setGameList(response.data);
-        setSearchText(summonerName);
         setUserName(summonerName);
       })
       .catch(error => { 
         console.error(error) 
       });
-      axios.get(`https://league-matches-history.herokuapp.com/${summonerName}`)
-        .then(response => {
-          setSummonerData(response.data);
-        })
-        .catch(error => { return error; });
+    axios.get(`https://league-matches-history.herokuapp.com/${summonerName}`)
+      .then(response => { 
+        setSummonerData(response.data);
+      })
+      .catch(error => { 
+        return error;
+      });
   }
 
    console.log(gameList); 
 
   return (
     <div className="App">
+    {
+      loading ? 
+      <><h1>Loading</h1><ClipLoader color={"#36A4D7"} loading={loading} css={override} size={600} /></>
+      :
+      <>
       <h1 className = "intro-header">Welcome to League Match Look Up App</h1>
       
       <div class="input-group">
@@ -68,7 +84,7 @@ function App() {
       {gameList.length ? 
         <>
         <h1 className = "summoner-header">Summoner: <strong>{userName}'s</strong> Match History</h1>
-        <div className = "player-profile">
+        <div className ="player-profile">
         <p><strong>Summoner Name: </strong>{summonerData.name}</p>
         <p><strong>Summoner Level: </strong>{summonerData.summonerLevel}</p>
         <img width = "200" height = "200" src ={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/profileicon/${summonerData.profileIconId}.png`} alt = "profile-img"></img>
@@ -95,7 +111,10 @@ function App() {
           <h1 >We Currently Have No Data, Please Enter a Summoner Name.</h1>
         </>
       }
-      <Footer />
+      <Footer />        
+      </>
+    }
+
       </div>
   );
 }
