@@ -109,7 +109,7 @@ footer{
   width: 4.124rem;
   height: 4.124rem;
   border-radius: 30%;
-  color: #778899;
+  background-color: #778899;
 }
 
 @keyframes App-logo-spin {
