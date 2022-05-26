@@ -82,7 +82,7 @@ footer{
   margin-bottom: 50px;
 }
 .league-img{
-  background-image: url("../public/images/challenger.png");
+  background-image: url("../src/images/challenger.png");
   width: 37.5rem;
   height: 25rem;
   margin: auto;
