@@ -26,7 +26,7 @@ function App() {
     setSearchText(value);
   }
   function getPlayerGames(){
-    axios.get(`https://league-matches-history.herokuapp.com/${searchText}`)
+    axios.get(`https://league-matches-history.herokuapp.com/past5games/${searchText}`)
       .then(response => {
         setGameList(response.data);
         setUserName(searchText);
@@ -43,7 +43,7 @@ function App() {
       });
   }
   function lookPlayerUp(summonerName){
-    axios.get(`https://league-matches-history.herokuapp.com/${summonerName}`)
+    axios.get(`https://league-matches-history.herokuapp.com/past5games/${summonerName}`)
       .then(response => {
         setGameList(response.data);
         setUserName(summonerName);
