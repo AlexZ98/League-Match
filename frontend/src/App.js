@@ -92,7 +92,7 @@ function App() {
         {gameList.map((gameData, index) => {
           return <div>
           <h2 class = "game-heading">  Game {index + 1}, Duration: {(gameData.info.gameDuration-(gameData.info.gameDuration%=60))/60+(9<gameData.info.gameDuration?':':':0')+gameData.info.gameDuration
-          } Minutes </h2>
+          } Minutes  <h2>Victor: {gameData.info.teams[0].win ? "Blue" : "Red"} Team</h2> </h2>
           <div className="player-container">
               {gameData.info.participants.map((data, participantIndex) => {
                 // eslint-disable-next-line no-lone-blocks
