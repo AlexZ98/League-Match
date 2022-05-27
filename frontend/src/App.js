@@ -73,7 +73,7 @@ function App() {
       
       <div class="input-group">
       <div class="input-group mb-3">
-  <input onChange = {handleChange} type="text" class="form-control" placeholder="Summoner Name" aria-label="Summoner username" aria-describedby="basic-addon2"/>
+  <input onChange = {handleChange} type="text" class="form-control" placeholder="Enter valid existing Summoner Name, e.g. Doublelift" aria-label="Summoner username" aria-describedby="basic-addon2"/>
   <div class="input-group-append">
     <button onClick = {getPlayerGames} class="btn btn-primary" type="button">Get Past 5 Games</button>
     <p><strong>Note</strong>: May experience slight delay between input and fetching data from the Riot Games API.</p>
